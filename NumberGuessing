@@ -1,0 +1,37 @@
+from random import randrange
+
+value_to_be_found=int(randrange(0,100))
+
+my_value=int(input('Quelle est ton estimation?'))
+
+while (my_value)!=(value_to_be_found):
+    if my_value >=value_to_be_found:
+        print("Tu es trop haut")
+        my_value=int(input('Quelle est ta nouvelle estimation?'))
+    elif my_value <=value_to_be_found:
+        print('Tu es trop bas')
+        my_value=int(input('Quelle est ta nouvelle estimation?'))
+
+print('Bravo')      
+
+from random import randrange
+
+#reation of the two variables
+value_to_be_found=int(randrange(0,100))
+computer_value=int(randrange(0,100))
+
+#we create boundaries
+up_lim=100
+down_lim=0
+
+while (computer_value)!=(value_to_be_found):
+    if computer_value >=value_to_be_found:
+        print("Tu es trop haut")
+        up_lim=computer_value
+        computer_value=int(randrange(down_lim,computer_value)) #i took random within range
+    elif my_value <=value_to_be_found:
+        print('Tu es trop bas')
+        down_lim=computer_value
+        computer_value=int(randrange(computer_value,up_lim))
+
+print('Bravo',computer_value) 
