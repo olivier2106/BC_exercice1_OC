@@ -1,0 +1,17 @@
+def palindrome(mot):
+    
+    pair=len(mot)//2
+    error=0
+    
+    for i in range(pair):
+        if mot[i]!=mot[len(mot)-1-i]:
+            error=error+1
+            print(error)
+        else:
+            error=error
+            print(error)
+            
+    if error!=0:
+        print('Problem')
+    else:
+        print('Palindrome')
