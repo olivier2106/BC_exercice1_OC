@@ -1,0 +1,18 @@
+class cercle:
+
+    # Initializer / Instance Attributes
+    def __init__(self, rayon):
+        self.rayon = rayon
+        
+    # instance method
+    def aire(self):
+        return "aire d'un cercle de rayon {} est {}".format(self.rayon, 3.14*self.rayon*self.rayon)
+
+    # instance method
+    def perimetre(self, rayon):
+        return "perimetre d'un cercle de rayon {} est {}".format(self.rayon, 2*3.14*self.rayon)
+
+# Instantiate the Dog object
+cercle_1 = cercle(8)
+
+print(cercle_1.aire())
