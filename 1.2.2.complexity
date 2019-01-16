@@ -1,0 +1,10 @@
+#♣the max complexity for n is sum of i! for i in range(0,n)
+
+import math
+
+def max_complexity(n):
+    complexity=0
+    for i in range(n):
+        complexity=complexity+math.factorial(i)
+        print(complexity)
+
