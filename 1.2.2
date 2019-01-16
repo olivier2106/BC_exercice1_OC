@@ -1,0 +1,31 @@
+#create a df with Pourboires and Octets
+import pandas as pd 
+d = {'Pourboires': [13000, 9000, 2000,1500,3500,2800,5000,1500],
+     'Octet': [2000,6000,800,700,1200,1000,1300,600]}
+
+df = pd.DataFrame(d)
+
+#creation d'un pourboire per octet
+df['Pourboires per Octet']=df['Pourboires']/df['Octet']
+
+#sort df perf pourboire per octet
+df=df.sort_values(by=['Pourboires per Octet'])
+#drop previous index
+df1=df.reset_index(drop=True)
+
+
+##Determination of simplest route
+#we pick best reward and check the nb of octet remaining to fill
+#we run within the universe of octet lower than the highest reward
+#till there is no number of octet satisfying differnce
+
+#variable initialisation
+octet_restant=6000
+pourboires=0
+
+
+while octet_restant>=df1['Octet'].min(): #condition to play again
+    octet_restant=octet_restant-df1['Octet'][len(df)-1] #updated nb of remaining octet to fill
+    pourboires=pourboires+df1['Pourboires'].iloc[len(df1)-1] #we pick the last pourboire
+    #PB je n arrive pas a rédurie mon df en degageant la derniere ligne..;
+    df1.drop(df1.index[len(df1)-1], axis=0)
