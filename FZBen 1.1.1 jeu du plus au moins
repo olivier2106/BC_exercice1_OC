@@ -1,0 +1,16 @@
+import random 
+n = random.randint(0, 100)
+appreciation = "?"
+while True:
+  var = input ("Entrez un nombre entre 0 et 100: ")
+  var = int(var)
+  if var < n:
+    appreciation = "c'est plus"
+    print (var, appreciation)    
+  else:
+    appreciation = "c'est moins"
+    print(var, appreciation)
+  if var == n:
+    appreciation = "bravo"
+    print(var, appreciation)
+    break
