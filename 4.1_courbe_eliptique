@@ -1,0 +1,13 @@
+class CourbeElliptique:
+
+def __init__(self, a, b):
+
+       self.a = a
+
+       self.b = b
+
+       if 4*a**3+27*b**2 == 0 :
+
+           raise ValueError('({}, {}) n\'est pas une courbe valide'.format(x, y))
+
+
