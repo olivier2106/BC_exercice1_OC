@@ -1,0 +1,10 @@
+def vigenere():
+    #get the sentence to encrypt
+    phrase=input("phrase à chiffrer")
+    i=0
+    phrase_encrypted=[]
+    while i < len(phrase):
+        temp_modulo=i%3
+        phrase_encrypted.append(chr(ord(phrase[i])+temp_modulo))
+        i+=1
+    print(''.join(phrase_encrypted))
