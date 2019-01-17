@@ -1,0 +1,11 @@
+def caesar_original():
+    #get the sentence to encrypt
+    phrase=input("phrase à chiffrer")
+    i=0
+    phrase_encrypted=[]
+    while i < len(phrase):
+        phrase_encrypted.append(chr(ord(phrase[i])+1))
+        i+=1
+    print(phrase_encrypted)
+    
+    ##PB j ai une liste avec des separateurs/ je ne sais aps comment les degager ou avoir autre chose qu une liste
