@@ -1,0 +1,3 @@
+def indicatrice_Euler(p,q):
+    return (p - 1)(q - 1)
+    
