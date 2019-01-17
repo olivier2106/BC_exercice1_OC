@@ -1,0 +1,12 @@
+def vigenere_decrypt():
+    #get the sentence to encrypt
+    phrase=input("phrase à dechiffrer")
+    i=0
+    phrase_decrypted=[]
+    while i < len(phrase):
+        temp_modulo=i%3
+        phrase_decrypted.append(chr(ord(phrase[i])-temp_modulo))
+        i+=1
+    print(''.join(phrase_decrypted))
+    
+    ##my script takes very long to run 
