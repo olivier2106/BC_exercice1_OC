@@ -1,0 +1,15 @@
+def regroupement(n):
+    phrase=input("phrase à dechiffrer")
+    #remove space
+    phrase = phrase.replace(' ', '')
+    #on refait comme avec vigenere mais en gardant que les multiples de 0
+    i=0
+    phrase_encrypted=[]
+    while i < len(phrase):
+        if i%3==0:
+            phrase_encrypted.append(chr(ord(phrase[i])))
+        i+=1
+    print(''.join(phrase_encrypted))
+    
+    ##je l ai fait pour une 
+    ## si on veut faire trois liste on fait 3 fois 
