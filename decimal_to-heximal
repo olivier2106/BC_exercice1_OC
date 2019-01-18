@@ -1,0 +1,34 @@
+import numpy as np
+import pandas as pd
+
+def ChangeHex(n,hexa_big):
+    
+       
+    if (n < 0):
+        hexa_big.append(str(0))
+        return hexa_big
+    elif (n<=1):
+        hexa_big.append(str(n))
+        return hexa_big
+    else:
+        x =(n%16)
+        if (x < 10):
+            hexa_big.append(str(x)), 
+        if (x == 10):
+            hexa_big.append("A"),
+        if (x == 11):
+            hexa_big.append("B"),
+        if (x == 12):
+            hexa_big.append("C"),
+        if (x == 13):
+            hexa_big.append("D"),
+        if (x == 14):
+            hexa_big.append("E"),
+        if (x == 15):
+            hexa_big.append ("F"),
+        return ChangeHex( np.int(n / 16),hexa_big )
+   
+
+def hexa_big(n):
+    hexa_big=ChangeHex(n,[])
+    print(''.join(hexa_big))
