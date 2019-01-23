@@ -1,0 +1,7 @@
+import numpy as np 
+#Difficulté actuelle =cible(max)/cible(actuelle) 
+
+def difficulte(cible):
+    cible_max=(np.exp(2,16) - 1) * np.exp(2,208)
+    cible_current= cible
+    return cible_max-cible_current
