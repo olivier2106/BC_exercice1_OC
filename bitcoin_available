@@ -1,0 +1,31 @@
+
+def nb_bitcoin_per_block(nb_block) :
+    return 50/(nb_block//210000)**2
+
+def nb_of_bitcoin_in_circulation(nb_block) :
+    #variable
+    nb_steps=int(nb_block//210000)
+    block_in_new_step=nb_block-nb_steps*210000
+    #init
+    total_number=0
+    #calculate the full step
+    for i in range(nb_steps):
+        total_number= total_number+(50/(2**i))*210000
+    #add the remainder
+    total_number=total_number+block_in_new_step*(50/(2**(nb_steps+1)))
+    return total_number
+
+from datetime import datetime
+
+def date_to_block():
+    then = datetime(2009, 1, 1, 1, 1, 1)        # Random date in the past
+    now  = datetime.now()                         # Now
+    duration = now - then                         # For build-in functions
+    duration_in_s = duration.total_seconds()
+    minutes = divmod(duration_in_s, 60*10)[0]
+    return minutes
+
+def time_to_block():
+    #detemine nb of blocks based on time delta
+    nb_block=date_to_block()
+    return nb_of_bitcoin_in_circulation(nb_block), nb_bitcoin_per_block(nb_block)
