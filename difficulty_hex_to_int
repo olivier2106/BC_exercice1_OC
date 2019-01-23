@@ -1,0 +1,36 @@
+def difficulte(cible):
+    cible_max=((2**16) - 1) * (2**208)
+    cible_current= cible
+    return cible_max/cible_current
+
+import binascii
+
+def readjustment_block(block_number):
+    return block_number%2016==0
+
+def hextoint(hex_value):
+    return int.from_bytes(hex_value, byteorder="big",signed="False")
+
+def reverse_endian(byte_string):
+    if byte_string[0:2]=="0x":
+        byte_string=byte_string[2:]
+        
+    print(byte_string)
+    
+    temp=bytearray.fromhex(byte_string)
+    temp.reverse()
+    return temp
+
+def difficulte_from_byte(byte_string):
+    #transform byte string in little endian to big endian
+    temp=reverse_endian(byte_string)
+    print(temp)
+    #transform my big endian to int
+    temp2=hextoint(temp)
+    #calculate difficulté
+    temp3=difficulte(temp2)
+    return temp3
+
+print(difficulte_from_byte("0x1c0ae493"))
+
+    
