@@ -1,0 +1,20 @@
+/*
+Définir la fonction transfererOrga(address orga, uint parts) public {  } qui permet de transférer une part de sa responsabilité à un nouvel organisateur.
+
+
+Définir la fonction estOrga(address orga) public returns (bool){  } qui permet de savoir si le propriétaire d’une adresse Ethereum donnée fait partie des organisateurs.
+*/
+
+function transfererOrga(address orga, uint parts) public
+{
+        // 1. Conditions
+        require(now >= auctionEnd, "nouvelle personne");
+        require(!ended, "auctionEnd has already been called.");
+
+        // 2. Effects
+        ended = true;
+        emit AuctionEnded(highestBidder, highestBid);
+
+        // 3. Interaction
+        msg.sender.transfer(parts)
+}
