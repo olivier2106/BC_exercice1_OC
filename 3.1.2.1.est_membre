@@ -2,7 +2,7 @@ function est_membre(string nom_utilisateur) public view returns(bool)
 	{
 		for (uint i = 0; i<membres.length; i++)
 		{
-			if (keccak256(bytes(membres[i])) == keccak256(nom_utilisateur)))
+			if ((membres[i]) == (nom_utilisateur))
 			{
 				return true;
 			}
