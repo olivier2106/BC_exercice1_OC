@@ -1,0 +1,9 @@
+/*Définir la fonction voter, qui prend pour paramètres l’indice d’une proposition de décision 
+et un entier pour déterminer le sens du vote (0 : contre, 1: pour)
+et incrémente le tableau votePour ou voteContre.*/
+
+function voter(uint indice_proposal, bool sens_vote) public
+{
+
+}
+ 
