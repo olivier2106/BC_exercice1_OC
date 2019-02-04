@@ -1,8 +1,10 @@
 /*
-Définir la fonction transfererOrga(address orga, uint parts) public {  } qui permet de transférer une part de sa responsabilité à un nouvel organisateur.
+Définir la fonction transfererOrga(address orga, uint parts) public {  } qui permet de 
+transférer une part de sa responsabilité à un nouvel organisateur.
 
 
-Définir la fonction estOrga(address orga) public returns (bool){  } qui permet de savoir si le propriétaire d’une adresse Ethereum donnée fait partie des organisateurs.
+Définir la fonction estOrga(address orga) public returns (bool){  } qui permet de savoir si 
+le propriétaire d’une adresse Ethereum donnée fait partie des organisateurs.
 */
 
 function transfererOrga(address orga, uint parts) public
@@ -18,3 +20,14 @@ function transfererOrga(address orga, uint parts) public
         // 3. Interaction
         msg.sender.transfer(parts)
 }
+
+function estOrga(address orga) public returns (bool)
+  {
+    for (uint i = 0; i < members.length; i++)
+    {
+      if (members[i] == orga)
+      {
+        return true;
+      }
+    }
+
